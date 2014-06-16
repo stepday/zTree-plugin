@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ZTREE 插件 - 将页面所有class为ztree的容器直接转换为zTree控件</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/demo.css" type="text/css">
+    <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.all-3.5.js"></script>
+    <script type="text/javascript" src="js/ContainerConverToZTree.js"></script>
+    <style>
+     div
+     {
+       border:1px solid #777777;    
+       margin-top:5px;
+     }
+    </style>
+</head>
+<body>
+    <h1>
+        ZTREE 插件 - 将页面所有class为ztree的容器直接转换为zTree控件</h1>
+    <div id="zTreeOne" class="ztree">
+        <ul>
+            你好
+            <li>实收资本
+                <ul>
+                    <li>子节点1</li>
+                    <li>子节点2</li>
+                </ul>
+            </li>
+            <li>资本公积</li>
+            <li>本年利润</li>
+            <li>利润分配</li>
+        </ul>
+    </div>
+    <div id="zTreeTwo" class="ztree">
+        <ul>
+            <li>所有者权益
+                <ul>
+                    <li>实收资本</li>
+                    <li>资本公积</li>
+                    <li>本年利润</li>
+                    <li>利润分配</li>
+                </ul>
+            </li>
+            <li>资产</li>
+            <li>负债</li>
+            <li>成本</li>
+            <li>损益</li>
+        </ul>
+    </div>
+    <script type="text/javascript" language="javascript">
+        //zTree的基本配置
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            }
+        };
+        ///页面初始化
+        $(document).ready(function () {            
+            $(document).ConvertToZTree();
+        });
+    </script>
+</body>
+</html>
